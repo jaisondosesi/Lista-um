@@ -2,26 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Par ou Ímpar</title>
+    <title>exercicio 02</title>
 </head>
 <body>
 
-    <h2>Checkar se o numero é par ou ímpar</h2>
+     <h2>Calcular a tabuada</h2>
 
     <form method="POST" action="">
-        <label for="numero">Digite um numero:</label>
+        <label for="numero">Digite um número:</label>
         <input type="number" name="numero" id="numero" required>
-        <input type="submit" value="Verificar">
+        <input type="submit" value="Calcular">
     </form>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $numero = $_POST["numero"];
 
-        if ($numero % 2 == 0) {
-            echo "<p>O numero $numero é Par.</p>";
-        } else {
-            echo "<p>O numero $numero é Ímpar.</p>";
+        echo "<h3>Tabuada do $numero:</h3>";
+
+        for ($i = 1; $i <= 10; $i++) {
+            $resultado = $numero * $i;
+            echo "$numero x $i = $resultado<br>";
         }
     }
     ?>
